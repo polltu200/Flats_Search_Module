@@ -92,7 +92,7 @@ useEffect(function() {
 ```
 	
 ## В данном проекте использованы следующие компоненты:
-Node.js (лицензия MIT) сайт - https://nodejs.org/en
-Express (лицензия MIT) сайт - https://expressjs.com/
-React (лицензия MIT) сайт - https://ru.legacy.reactjs.org/
-MySQL (лицензия GNU GPL) сайт - https://www.mysql.com/
+#### Node.js (лицензия MIT) сайт - https://nodejs.org/en
+#### Express (лицензия MIT) сайт - https://expressjs.com/
+#### React (лицензия MIT) сайт - https://ru.legacy.reactjs.org/
+#### MySQL (лицензия GNU GPL) сайт - https://www.mysql.com/
