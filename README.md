@@ -83,7 +83,7 @@ node index.js
 npm run dev
 ```
 
-3.2 или для запуска React веб-приложения в локальной сети в директории apartaments_search_module_frontend запустить start.bat или прописать команду находясь в той же директории:
+3.2 или для запуска React веб-приложения в локальной сети в директории apartaments_search_module_frontend запустить start_in_lan.bat или прописать команду находясь в той же директории:
 
 ```
 npm run dev -- --host 0.0.0.0
