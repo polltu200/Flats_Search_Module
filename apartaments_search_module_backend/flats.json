@@ -1,0 +1,24 @@
+[
+	{
+		"id": 999,
+		"floor": 1,
+		"pos_on_floor": 1,
+		"price": 213123918,
+		"rooms": 3,
+		"area_total": 33.7,
+		"area_kitchen": 11.5,
+		"area_live": 10.6,
+		"layout_image": "https://cdn.com"
+	},
+	{
+		"id": 5674,
+		"floor": 1,
+		"pos_on_floor": 1,
+		"price": 213123918,
+		"rooms": 3,
+		"area_total": 33.7,
+		"area_kitchen": 11.5,
+		"area_live": 10.6,
+		"layout_image": ""
+		}
+]

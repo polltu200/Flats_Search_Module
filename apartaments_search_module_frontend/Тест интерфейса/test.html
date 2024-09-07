@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Генерация веб-страницы</title>
+</head>
+<body>
+    <h1>Генерация веб-страницы через JavaScript</h1>
+    <button id="openPageBtn">Открыть новую страницу</button>
+
+    <script>
+        document.getElementById('openPageBtn').addEventListener('click', function() {
+            // Генерируем новую страницу
+            const newWindow = window.open('', '_blank'); // Открыть новое окно
+            if (newWindow) {
+                // Создаем HTML-контент
+                const htmlContent = `
+                    <!DOCTYPE html>
+                    <html lang="ru">
+                    <head>
+                        <meta charset="UTF-8">
+                        <title>Новая страница</title>
+                    </head>
+                    <body>
+                        <h1>Это новая сгенерированная страница</h1>
+                        <p>Контент страницы был сгенерирован с использованием JavaScript.</p>
+                        <button onclick="window.close()">Закрыть страницу</button>
+                    </body>
+                    </html>
+                `;
+
+                // Записываем сгенерированный HTML в новое окно
+                newWindow.document.write(htmlContent);
+                newWindow.document.close(); // Закрываем поток документа
+            } else {
+                alert('Не удалось открыть новое окно. Пожалуйста, проверьте настройки вашего браузера.');
+            }
+        });
+    </script>
+</body>
+</html>
