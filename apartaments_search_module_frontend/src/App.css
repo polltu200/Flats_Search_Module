@@ -50,7 +50,43 @@
 	height: 25%;
 }
 
-#fdata {
+/*Смартфон HD вертикально*/
+#fdata_720spV {
+	position: absolute;
+	margin-left: 23%;
+	margin-top: -23%;
+	font-size: 0.9rem;
+}
+
+/*Смартфон HD горизонтально*/
+#fdata_720spH {
+	position: absolute;
+	margin-left: 23%;
+	margin-top: -23%;
+	font-size: 1.5rem;
+}
+
+#fdata_720 {
+	position: absolute;
+	margin-left: 23%;
+	margin-top: -24%;
+}
+
+/*HD Монитор (горизонтально)*/
+#fdata_HD {
+	position: absolute;
+	margin-left: 22%;
+	margin-top: -19%;
+}
+
+#fdata_1080 {
+	position: absolute;
+	margin-left: 24%;
+	margin-top: -21%;
+}
+
+/*FullHD Монитор (горизонтально)*/
+#fdata_FullHD {
 	position: absolute;
 	margin-left: 20%;
 	margin-top: -19%;

@@ -5,6 +5,20 @@ import './App.css';
 
 function App() {
 	
+	//Хуки для адаптации интерфейса
+	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+	
+	useEffect(function(){
+		function HandleResize() { setWindowWidth(window.innerWidth); }
+		
+		window.addEventListener('resize',HandleResize);
+			
+		return function() {
+			window.removeEventListener('resize',HandleResize);
+		};
+	},[]);
+	
+	//Массив квартир
 	const [FL,setFL] = useState([]);
 	
 	var page = -1
@@ -282,12 +296,65 @@ function App() {
 								<img id="fimg" onClick={function(){ShowFlatData(flat)}} src={flat.layout_image}/>
 							</div>
 							
-							<div id="fdata">
+							{
+							//Ширина 350p (Смартфон HD вертикально)
+							windowWidth <= 480 && windowWidth > 320 &&<div id="fdata_720spV">
+								<a>Этаж: {flat.floor}</a>
+								<br/>
+								<a>Цена: {flat.price} рублей</a>
+								<br/>
+								<a>Количество комнат: {flat.rooms}</a>
+								<br/>
+								<a>Общая площадь в кв.м: {flat.area_total}</a>
+							</div>}
+							
+							{
+								//Ширина 770p (Смартфон HD горизонтально)
+							windowWidth <= 1080 && windowWidth >= 720 &&<div id="fdata_720spH">
+								<a>Этаж: {flat.floor}</a>
+								<br/>
+								<a>Цена: {flat.price} рублей</a>
+								<br/>
+								<a>Количество комнат: {flat.rooms}</a>
+								<br/>
+								<a>Общая площадь в кв.м: {flat.area_total}</a>
+							</div>}
+							
+							{
+							//Ширина 720p (Смартфон FullHD)
+							windowWidth <= 720 && windowWidth > 690 &&<div id="fdata_720">
 								<p>Этаж: {flat.floor}</p>
 								<p>Цена: {flat.price} рублей</p>
 								<p>Количество комнат: {flat.rooms}</p>
 								<p>Общая площадь в кв.м: {flat.area_total}</p>
-							</div>
+							</div>}
+							
+							{
+							//Ширина 1280p (HD Монитор)
+							windowWidth < 1080 &&  windowWidth >= 1280 && <div id="fdata_HD">
+								<p>Этаж: {flat.floor}</p>
+								<p>Цена: {flat.price} рублей</p>
+								<p>Количество комнат: {flat.rooms}</p>
+								<p>Общая площадь в кв.м: {flat.area_total}</p>
+							</div>}
+							
+							{
+							//Ширина 1080p (Смартфон FullHD)
+							windowWidth < 1400 && windowWidth >= 1080 && <div id="fdata_1080">
+								<p>Этаж: {flat.floor}</p>
+								<p>Цена: {flat.price} рублей</p>
+								<p>Количество комнат: {flat.rooms}</p>
+								<p>Общая площадь в кв.м: {flat.area_total}</p>
+							</div>}
+							
+							{
+							//Ширина 1920p (FullHD Монитор)
+							windowWidth < 2000 && windowWidth >= 1400 && <div id="fdata_FullHD">
+								<p>Этаж: {flat.floor}</p>
+								<p>Цена: {flat.price} рублей</p>
+								<p>Количество комнат: {flat.rooms}</p>
+								<p>Общая площадь в кв.м: {flat.area_total}</p>
+							</div>}
 							
 							</div>
 							
