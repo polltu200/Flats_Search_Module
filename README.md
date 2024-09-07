@@ -74,7 +74,7 @@ mysqld.exe
 2. для запуска сервера в директории apartaments_search_module_backend запустить start.bat или прописать в командной строке находясь в той же директории:
 
 ```
-npm start
+node index.js
 ```
 
 3.1 для запуска React веб-приложения только на данном компьютере в директории apartaments_search_module_frontend запустить start.bat или прописать команду находясь в той же директории:
