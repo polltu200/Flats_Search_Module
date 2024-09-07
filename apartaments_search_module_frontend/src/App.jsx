@@ -43,6 +43,8 @@ function App() {
 		page = sessionStorage.getItem('page')
 	} 
 	
+	//console.log('page: ' + page)
+	
 	//Вычисление смещения для переключения страниц
 	var pslice0 = 8*(page-1)
 	var pslice1 = 8*page
@@ -70,8 +72,8 @@ function App() {
 		location.reload();
 	}
 	
-	function GoToPage() {
-		//page=current_page
+	function GoToPage(target_page) {
+		page=target_page
 		sessionStorage.setItem('page',page);
 		location.reload();
 	}
@@ -146,16 +148,18 @@ function App() {
 	//Сортировка по objs_array - массив, тип - по убыванию или возрастанию, key - критерий сортировки
 	function SortArray(objs_array,type,key) {
 		
+		const NewObjsArray = [...objs_array]
+		
 		switch(type) {
 			
 			case '-+':
-				var sorted = objs_array.sort((obj1, obj2) => obj1[key] - obj2[key]);
+				var sorted = NewObjsArray.sort((obj1, obj2) => obj1[key] - obj2[key]);
 				console.log('Сортировка по возрастанию\n')
 				return sorted
 			break;
 			
 			case '+-':
-				var sorted = objs_array.sort((obj1, obj2) => obj2[key] - obj1[key]);
+				var sorted = NewObjsArray.sort((obj1, obj2) => obj2[key] - obj1[key]);
 				console.log('Сортировка по убыванию\n')
 				return sorted
 			break;
@@ -166,16 +170,9 @@ function App() {
 		}
 	}
 	
-	//Функция сортировки квартир (По неизвестной причине React отказывается обновлять квартиры на странице, но при этом сам массив сортируется!)
+	//Функция сортировки квартир
 	function SortFlats() {
-		alert('Сортировка квартир, по неизвестной причине React отказывается обновлять квартиры на странице, но при этом сам массив сортируется!')
-		alert('------\nИсходный массив:\n------\n'+JSON.stringify(FL,null,1))
-		
 		setFL(SortArray(FL,sessionStorage.getItem('sort_type'),sessionStorage.getItem('sort_critery')))
-		
-		alert('------\nСортированный массив:\n------\n'+JSON.stringify(FL,null,1))
-		
-		//setFL(SortArray(sessionStorage.getItem('prevFL'),sessionStorage.getItem('sort_type'),sessionStorage.getItem('sort_critery')))
 	}
 	
 	//Данная функция отвечает за отображение подробной информации о выбранной пользователем квартире
@@ -379,7 +376,7 @@ function App() {
 					)
 				} else {
 				return (
-					<button id={`pg_${pg}`} class={'pgs'} onClick={GoToPage}>{pg}</button>
+				<button id={`pg_${pg}`} class={'pgs'} onClick={function(){GoToPage(pg)}}>{pg}</button>
 					)
 				}
 					
